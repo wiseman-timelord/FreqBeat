@@ -1,9 +1,8 @@
 # FreqBeat
-Status: Working, 
-A real-time audio stream analyzer, including, format and frequency.
+Status: Beta - Needs, tweaking & bugfixing.
 
 ## Description
-`FreqBeat` is a Python-based tool tailored for analyzing audio streams from various sources. It calculates and displays the dominant frequency for both left and right audio channels in real-time. With support for multiple playlist formats and direct stream URLs, `FreqBeat` offers a clear console interface for users to interact with and view the analysis results.
+`FreqBeat` is a real-time audio stream analyzer, including, format and frequency. It calculates and displays the dominant frequency for both left and right audio channels in real-time. With support for multiple playlist formats and direct stream URLs, `FreqBeat` offers a clear console interface for users to interact with and view the analysis results.
 
 ## Features
 - **Support for Multiple Formats**: Handles `.m3u`, `.pls`, and direct audio stream URLs.
