@@ -5,14 +5,12 @@ Status: Beta - Needs, tweaking & bugfixing.
 `FreqBeat` is a comprehensive audio stream analyzer designed to provide real-time insights into audio stream data from a given URL. Beyond just format and frequency, it delves into volume levels and offers a dynamic user interface for interaction. With the capability to extract streaming URLs from playlist files and direct stream links, `FreqBeat` ensures users have a seamless experience while viewing the analysis results on a clear console interface.
 
 ## Features
-- **Support for Multiple Formats**: Efficiently processes `.m3u`, `.pls`, and direct audio stream URLs.
-- **Real-time Frequency Analysis**: Accurately calculates and showcases the dominant low, medium, and high frequencies for the audio stream.
-- **Volume Level Detection**: Analyzes and displays volume levels, categorizing them as quiet, normal, or loud.
-- **Continuous Analysis**: Ensures uninterrupted analysis of the audio stream, updating the results in real-time.
-- **Interactive Console Interface**: Features a user-centric interface that not only displays the analysis but also allows users to control playback speed, input new URLs, or exit the program.
-- **Keyboard Interactions**: Empowers users with keyboard shortcuts for functionalities like adjusting playback speed, changing the URL, or quitting the application.
-- **Configuration Management**: Enables users to load and save configurations, primarily focusing on playback speed, from a YAML file.
-- **Robust Error Handling**: Incorporates built-in error mechanisms to address potential issues related to stream fetching, decoding, or in scenarios where the stream lacks audio content.
+- **Support for Multiple Formats**: Currently supports, `.m3u`, `.pls`, direct stream URLs.
+- **Real-time Frequency Analysis**: Calculates and shows, the dominant, low, medium, high frequencies.
+- **Volume Level Detection**: Analyzes and displays, volume levels, as, quiet, normal, loud.
+- **Interactive Interface**: Main interface allows users to control speed, input new URLs, or exit.
+- **Configuration Management**: Persistient speed settings through YAML configuration file.
+- **Error Handling**: Incorporates error mechanisms to address issues for, stream fetching, etc.
 
 ## INTERFACE
 Output looks like this...
