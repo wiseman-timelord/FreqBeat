@@ -40,7 +40,7 @@ Output looks like this...
 2. Run the script using `python freqbeat.py` or click `FreqBeat.bat`.
 3. Enter the URL of the audio stream when prompted.
 4. View the real-time analysis of the audio stream's dominant frequencies.
-5. Enter a new URL or quit the program as needed.
+5. Press any key to return to Main Menu.
 
 ## Requirements
 - Python 3.7 or higher
