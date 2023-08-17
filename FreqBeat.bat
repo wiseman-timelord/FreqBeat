@@ -1,9 +1,9 @@
 @echo off
-mode 50,20
-mode con:cols=50 lines=100
+mode 65,20
+rem con:cols=65 lines=65
 cls
 
-:: If the script receives a directory argument, set it as the current directory
+:: Set the current directory
 if not "%~1"=="" (
     cd /d %~1
 )
@@ -23,7 +23,7 @@ if %errorLevel% == 0 (
 :requestAdmin
 echo Requesting admin rights...
 
-:: Get the full path of the current batch script
+:: Get path of batch script
 setlocal
 set "batchPath=%~f0"
 echo Batch script path: %batchPath%
@@ -37,15 +37,27 @@ echo UAC.ShellExecute "%batchPath%", "%currentDir%", "", "runas", 1 >> "%temp%\g
 exit /b
 
 :gotAdmin
-:: Set the working directory back to the original location
+:: Set the working directory
 cd /d "%currentDir%"
 echo Directory set to: %currentDir%
+echo.
+
+:: Ascii Art
+echo " ___________                    __________               __    "
+echo " \_   _____/______   ____  _____\______   \ ____ _____ _/  |_  "
+echo "  |    __) \_  __ \_/ __ \/ ____/|    |  _// __ \\__  \\   __\ "
+echo "  |     \   |  | \/\  ___< <_|  ||    |   \  ___/ / __ \|  |   "
+echo "  \___  /   |__|    \___  >__   ||______  /\___  >____  /__|   "
+echo "      \/                \/   |__|       \/     \/     \/       "
+echo.
 echo.
 
 :: Run the freqbeat.py script
 echo Launching FreqBeat...
 echo.
+@echo on
 python freqbeat.py
+@echo off
 echo.
 echo.
 
