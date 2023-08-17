@@ -16,14 +16,22 @@ Status: Beta - Still, tweaking & bugfixing.
 Output looks like this...
 
 ```
+   ___________                   __________               __
+   \_   _____/_____   ____  _____\______   \ ____ _____ _/  |_
+    |    __|\_  __ \_/ __ \/ ____/|    |  _/| __ |\__  \|    _\
+    |    \   |  | \/\  ___/| |_| ||    |   \  ___/ / __ \|  |
+    \__  /   |__|    \___ \ \__  ||______  /\___ \/____  /__|
+       \/                \/    \_\       \/     \/     \/
 
-                     FreqBeat
 
-       Channels: 2, Bits: 16Bit, Rate: 44Khz
-          Quiet [ ], Normal [ ], Loud [*]
-      Low: 842Hz, Med: 7541Hz, High: 18489Hz
+                       Speed: 1/2, Chunk: 21KB
 
-            Speed: 1/4s, Chunk: 10KB
+               Channels: 2, Bits: 16Bit, Rate: 44Khz
+                  Quiet [ ], Normal [*], Loud [ ]
+               Low: 76Hz, Med: 9646Hz, High: 16078Hz
+
+
+                       Press any key for Menu
 
 ```
 
