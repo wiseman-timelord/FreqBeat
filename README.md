@@ -7,7 +7,7 @@ Status: Beta - Still, tweaking & bugfixing.
 ## Features
 - **Support for Multiple Formats**: Currently supports, `.m3u`, `.pls`, direct stream URLs.
 - **Real-time Frequency Analysis**: Calculates and shows, the dominant, low, medium, high frequencies.
-- **Volume Level Detection**: Analyzes and displays, volume levels, as, quiet (<5%), normal (>5%-<95%), loud (>95%).
+- **Volume Level Detection**: Analyzes and displays, volume levels, quiet (<5%), normal (>5%-<95%), loud (>95%).
 - **Interactive Interface**: Main interface allows users to control speed, input new URLs, or exit.
 - **Configuration Management**: Persistient speed settings through YAML configuration file.
 - **Error Handling**: Incorporates error mechanisms to address issues for, stream fetching, etc.
