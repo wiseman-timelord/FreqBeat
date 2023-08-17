@@ -1,6 +1,6 @@
 @echo off
 mode 65,20
-mode con:cols=65 lines=100
+rem mode con:cols=65 lines=100
 cls
 
 :: Ascii Art
@@ -11,8 +11,10 @@ echo "  |     \   |  | \/\  ___< <_|  ||    |   \  ___/ / __ \|  |   "
 echo "  \___  /   |__|    \___  >__   ||______  /\___  >____  /__|   "
 echo "      \/                \/   |__|       \/     \/     \/       "
 echo "                    Its time to get freqy!"
+timeout /t 3 /nobreak >nul
 echo.
 echo.
+
 
 :: Run the freqbeat.py script
 echo Launching FreqBeat...
