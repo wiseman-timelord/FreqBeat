@@ -1,3 +1,6 @@
 numpy
 requests
 av
+keyboard
+PyYAML
+pygetwindow

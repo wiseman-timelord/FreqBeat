@@ -1,5 +1,6 @@
 @echo off
-mode 50,15
+mode 50,20
+mode con:cols=50 lines=250
 cls
 
 :: If the script receives a directory argument, set it as the current directory
