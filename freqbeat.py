@@ -1,3 +1,8 @@
+# Script "freqbeat.py"...
+
+# Imports
+import threading
+import queue
 import requests
 import numpy as np
 import av
@@ -7,6 +12,10 @@ import yaml
 import keyboard
 import pygetwindow as gw
 
+# Globals
+key_queue = queue.Queue()
+
+# Ascii
 ASCII_ART = """
    ___________                   __________               __   
    \_   _____/_____   ____  _____\______   \ ____ _____ _/  |_  
@@ -29,6 +38,11 @@ def load_config():
 def save_speed_to_config(speed):
     with open('config.yaml', 'w') as file:
         yaml.dump({'Speed': speed}, file)
+
+def keyboard_input_listener():
+    while True:
+        key = keyboard.read_key(suppress=True)
+        key_queue.put(key)
 
 # Function to Extract Stream URL
 def get_stream_url(url):
@@ -53,6 +67,10 @@ def analyze_stream(url, speed):
         print("Unable to extract stream URL.")
         return
     reconnect_attempts = 0
+    # Start the keyboard input listener thread
+    keyboard_thread = threading.Thread(target=keyboard_input_listener)
+    keyboard_thread.daemon = True  # Set as a daemon so it terminates when the main program ends
+    keyboard_thread.start()
     while reconnect_attempts < 10:
         try:
             container = av.open(stream_url)
@@ -64,6 +82,14 @@ def analyze_stream(url, speed):
                 elapsed_time = time.time() - start_time
                 sleep_duration = max(1.0/speed - elapsed_time, 0)
                 time.sleep(sleep_duration)
+                
+                # Check for any key press from the queue
+                if not key_queue.empty():
+                    key = key_queue.get()
+                    if key:  # If any key is pressed
+                        prompt_for_url()
+                        return
+                
             reconnect_attempts = 0
         except (av.error.HTTPError, av.error.FFmpegError) as e:
             if "[Errno 5] I/O error" in str(e):
@@ -123,7 +149,7 @@ def analyze_volume(mono_channel):
     normal = "*" if 0.05 <= avg_volume <= 0.95 else " "
     return quiet, normal, loud
 
-# Function to Display the Output
+# Function for Loop Display
 def display_output(sample_rate, chunk_size, speed, dominant_low, dominant_med, dominant_high, quiet, normal, loud):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(ASCII_ART)
@@ -146,7 +172,7 @@ def handle_user_input(speeds, speed):
         exit()
     return speed
 
-# Function to Prompt User for URL Input
+# Function for Main Menu
 def prompt_for_url():
     config = load_config()
     speed = config.get('Speed', 1)
