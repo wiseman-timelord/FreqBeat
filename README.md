@@ -1,5 +1,5 @@
 # StatStream
-Status: Working.
+Status: Beta, fixed return to menu, broke read stream.
 
 ## Description
 `StatStream` is a comprehensive audio stream analyzer designed to provide real-time insights into audio stream data from a given URL. Beyond just format and frequency, it delves into volume levels and offers a dynamic user interface for interaction. With the capability to extract streaming URLs from playlist files and direct stream links, `StatStream` ensures users have a seamless experience while viewing the analysis results on a clear console interface.
