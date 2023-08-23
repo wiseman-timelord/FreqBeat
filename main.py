@@ -4,6 +4,7 @@
 import threading
 import queue
 import requests
+from requests.exceptions import HTTPError, Timeout, RequestException
 import numpy as np
 import av
 import time
@@ -52,7 +53,7 @@ def save_speed_to_config(speed):
 def prompt_for_url():
     config = load_config()
     speed = config.get('Speed', 1)
-    os.system('cls' if os.name == 'nt' else 'clear')
+    # os.system('cls' if os.name == 'nt' else 'clear')
     print(ASCII_ART)
     print(f"\n\n\n                             Speed: {speed} updates/second")
     url_or_speed = input("\n\n\n\n Enter Url, Speed = 1/2/3/4, Quit = Q: ")
@@ -67,23 +68,37 @@ def prompt_for_url():
 
 # Extract the stream URL from the given URL
 def get_stream_url(url):
+    headers = {'User-Agent': 'Mozilla/5.0'}
     try:
-        response = requests.head(url, timeout=10)  # Check if the URL is still valid
-        if response.status_code != 200:
-            print(f"Invalid URL or the URL is no longer accessible. Status Code: {response.status_code}")
-            return None
+        # Make a GET request with stream=True to check if the URL is valid
+        response = requests.get(url, headers=headers, timeout=10, stream=True)
+        response.raise_for_status()  # Raise HTTPError for bad responses (4xx and 5xx)
 
+        # Close the response stream to free up resources
+        response.close()
+
+        # Check if the URL ends with .m3u or .pls and extract the stream URL
         if url.endswith('.m3u') or url.endswith('.pls'):
-            response = requests.get(url, timeout=10)
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
             lines = response.text.splitlines()
             for line in lines:
                 if not line.startswith("#") and "http" in line:
                     return line
         else:
             return url
-    except requests.RequestException as e:
-        print(f"Error fetching the URL: {e}")
-        return None
+
+    except HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+    except Timeout as timeout_err:
+        print(f"Timeout error: {timeout_err}")
+    except RequestException as req_err:
+        print(f"An error occurred while fetching the URL: {req_err}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+    return None
+
 
 # Analyze and display the stream data
 def analyze_stream(container, audio_stream, sample_rate, speed, speeds, stream_url, key_queue):
