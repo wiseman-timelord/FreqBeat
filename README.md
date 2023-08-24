@@ -2,15 +2,16 @@
 Status: Alpha, not progressing past "onset" or something similar, to then be in main loop with analysis displayed. Leaving project for a bit, will revisit later, take a look at it if yer like.
 
 ## Description
-`StatStream` is a comprehensive audio stream analyzer designed to provide real-time insights into audio stream data from a given URL. Beyond just format and frequency, it delves into volume levels and offers a dynamic user interface for interaction. With the capability to extract streaming URLs from playlist files and direct stream links, `StatStream` ensures users have a seamless experience while viewing the analysis results on a clear console interface.
+`StatStream` is an advanced audio stream analyzer that provides real-time insights into audio stream data. It supports a variety of audio formats and offers detailed analysis including frequency, volume, and tempo. The program also features a dynamic ASCII art console interface for enhanced user interaction.
 
 ## Features
-- **Support for Multiple Formats**: Currently supports, `.m3u`, `.pls`, direct stream URLs.
-- **Real-time Frequency Analysis**: Calculates and shows, the dominant, low, medium, high frequencies.
-- **Volume Level Detection**: Analyzes and displays, volume levels, quiet (<5%), normal (>5%-<95%), loud (>95%).
-- **Interactive Interface**: Main interface allows users to control speed, input new URLs, or exit.
-- **Configuration Management**: Persistient speed settings through YAML configuration file.
-- **Error Handling**: Incorporates error mechanisms to address issues for, stream fetching, etc.
+- **Support for Multiple Protocols and Formats**: Supports `.m3u`, `.pls`, `.mp3`, `.aac`, `.ogg`, `.flac`, as well as `rtsp` and `mms` protocols.
+- **Real-time Frequency and Volume Analysis**: Calculates and displays dominant low, medium, and high frequencies, as well as volume levels categorized as quiet, normal, and loud.
+- **Tempo Analysis**: Provides real-time Beats Per Minute (BPM) analysis.
+- **Interactive Interface**: Allows users to control speed, input new URLs, or exit the program. Also supports keyboard input for additional controls.
+- **Configuration Management**: Persistent speed settings managed through a YAML configuration file.
+- **Robust Error Handling**: Comprehensive error handling for issues like stream fetching, timeouts, and more.
+
 
 ## INTERFACE
 Output looks like this...
@@ -28,6 +29,7 @@ Output looks like this...
 
                        Channels: 2, Bits: 16Bit, Rate: 44Khz
                           Quiet [ ], Normal [*], Loud [ ]
+                            BPM: 145, BPM Range: 122-166
                        Low: 76Hz, Med: 9646Hz, High: 16078Hz
 
 
@@ -35,12 +37,14 @@ Output looks like this...
 
 ```
 
+
 ## Usage
 1. Clone the repository or download the script.
 2. Run the script using `python StatStream.py` or click `StatStream.bat`.
 3. Enter the URL of the audio stream when prompted.
 4. View the real-time analysis of the audio stream's dominant frequencies.
 5. Press any key to return to Main Menu.
+
 
 ## Requirements
 - Python 3.7 or higher
