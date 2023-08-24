@@ -1,5 +1,5 @@
 # StatStream
-Status: Alpha, not progressing past "onset" or something similar, to then be in main loop with analysis displayed. Leaving project for a bit, will revisit later, take a look at it if yer like.
+Status: Alpha, not progressing past "onset" or something similar, to then be in main loop with analysis displayed. Leaving project for a bit, will revisit later, other projects.
 
 ## Description
 `StatStream` is an advanced audio stream analyzer that provides real-time insights into audio stream data. It supports a variety of audio formats and offers detailed analysis including frequency, volume, and tempo. The program also features a dynamic ASCII art console interface for enhanced user interaction.
