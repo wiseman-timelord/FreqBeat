@@ -1,5 +1,5 @@
 # StatStream
-Status: Alpha, not progressing past "onset" or something similar, to then be in main loop with analysis displayed. Leaving project for a bit, mostly implemented & correct, will revisit later...
+Status: Alpha, not progressing past "onset" or something similar, to then be in main loop with analysis displayed. Leaving project for a bit, mostly implemented & correct. At this stage, things have been, tried and checked, next move would be to make a test script for, specific code involved or alternate methods of analysis to librosa.
 
 ## Description
 `StatStream` is an advanced audio stream analyzer that provides real-time insights into audio stream data. It supports a variety of audio formats and offers detailed analysis including frequency, volume, and tempo. The program also features a dynamic ASCII art console interface for enhanced user interaction.
