@@ -1,5 +1,6 @@
 # StatStream
-Status: Alpha; not progressing past initiation for main loop. Debug messages are implemented, at this stage, and things have been, tried and checked, next move would be to make a test script for, specific code involved or alternate methods of analysis to librosa. Leaving project for a bit, will revisit later.
+## Status:
+Alpha. The batches for this program may only run on Windows 10 due to the different PowerShell launch commands required for various OS versions, that microsoft have bizarly chosen to use for each OS, and may cause endless launch loop on other systems. Also: not progressing past initiation for main loop. Debug messages are implemented, at this stage, and things have been, tried and checked, next move would be to make a test script for, specific code involved or alternate methods of analysis to librosa. Leaving project for a bit, will revisit later.
 
 ## Description
 `StatStream` is an advanced audio stream analyzer that provides real-time insights into audio stream data. It supports a variety of audio formats and offers detailed analysis including frequency, volume, and tempo. The program also features a dynamic ASCII art console interface for enhanced user interaction.
