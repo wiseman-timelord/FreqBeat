@@ -56,5 +56,5 @@ Output looks like this...
 - Python
 - Windows (Optional).
 
-### DISCLAIMER
-Read "License.Txt", its, what its there for and why its supplied with the package.
+## DISCLAIMER
+The "License.Txt" covers, this and relating, stuff.
