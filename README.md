@@ -56,5 +56,5 @@ Output looks like this...
 - Python
 - Windows (Optional).
 
-## Disclaimer
-"StatStream" is provided "as is," and the creators make no warranties regarding its use. Users are solely responsible for the content they analyze and any potential damages to their equipment. The use of "StatStream" for unauthorized activities is strictly at the user's own risk, and all legal responsibilities lie with the user.
+### DISCLAIMER
+Read "License.Txt", its, what its there for and why its supplied with the package.
